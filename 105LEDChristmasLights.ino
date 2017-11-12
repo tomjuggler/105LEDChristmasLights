@@ -48,57 +48,41 @@ uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
 void loop() { 
   if(inChar=='a'){
-//    FastLED.showColor(CRGB::Green);
-// First slide the led in one direction
+for(int i = NUM_LEDS-1; i >= 0; i--) {
+    leds[i] = CRGB::Black;
+    FastLED.show();
+  }
   for(int i = 0; i < NUM_LEDS; i++) {
-    // Set the i'th led to red 
     leds[i] = CRGB::Blue;
-    // Show the leds
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-//    leds[i] = CRGB::Black;
-    // Wait a little bit before we loop around and do it again
-//    FastLED.delay(30);
-  }
+   }
     }else if(inChar=='s'){
-//      FastLED.showColor(CRGB::Green);
-   // Now go in the other direction.  
-  for(int i = NUM_LEDS-1; i >= 0; i--) {
-    // Set the i'th led to red 
-    leds[i] = CRGB::Red;
-    // Show the leds
+for(int i = NUM_LEDS-1; i >= 0; i--) {
+    leds[i] = CRGB::Black;
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-//    leds[i] = CRGB::Black;
-    // Wait a little bit before we loop around and do it again
-//    FastLED.delay(30);
   }
-    }else if(inChar=='d'){
-  //    FastLED.showColor(CRGB::Green);
-// First slide the led in one direction
   for(int i = 0; i < NUM_LEDS; i++) {
-    // Set the i'th led to red 
+    leds[i] = CRGB::Red;
+    FastLED.show();
+   }
+    }else if(inChar=='d'){
+  for(int i = NUM_LEDS-1; i >= 0; i--) {
+    leds[i] = CRGB::Black;
+    FastLED.show();
+  }
+  for(int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Green;
-    // Show the leds
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-//    leds[i] = CRGB::Black;
-    // Wait a little bit before we loop around and do it again
-//    FastLED.delay(30);
-  }
-     
+   }    
     } else if(inChar=='w'){
-      for(int i = NUM_LEDS-1; i >= 0; i--) {
-    // Set the i'th led to red 
-    leds[i] = CRGB::Yellow;
-    // Show the leds
+     for(int i = NUM_LEDS-1; i >= 0; i--) {
+    leds[i] = CRGB::Black;
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-//    leds[i] = CRGB::Black;
-    // Wait a little bit before we loop around and do it again
-//    FastLED.delay(30);
   }
-     
+  for(int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CRGB::Yellow;
+    FastLED.show();
+   }     
     }else if(inChar=='e'){
   
     }

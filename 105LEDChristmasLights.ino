@@ -4,14 +4,14 @@
 
 // How many leds in your strip?
 #define NUM_LEDS 105
-#define BRIGHTNESS  20 //change to 200 for shows!!!!
+#define BRIGHTNESS  20 // keep this low or blow up the Arduino - can go up to 255!!!!
 
 
 // For led chips like Neopixels, which have a data line, ground, and power, you just
 // need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
 // ground, and power), like the LPD8806, define both DATA_PIN and CLOCK_PIN
 #define DATA_PIN 6
-#define CLOCK_PIN 13
+//#define CLOCK_PIN 13
 
 // Define the array of leds
 CRGB leds[NUM_LEDS];
@@ -21,6 +21,9 @@ char inChar = 'f';
 const int buttonPin = 12;
 int outPin = 11;
 int buttonState = 0;
+
+
+
 
 #define FRAMES_PER_SECOND  120
 
@@ -39,6 +42,8 @@ void setup() {
   digitalWrite(outPin, HIGH); //connect to buttonPin for switch!
 
   FastLED.showColor(CRGB::Black);
+
+  
 }
 
 // List of patterns to cycle through.  Each is defined as a separate function below.
@@ -51,6 +56,8 @@ uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
 
 void loop() {
+ 
+  
   if (inChar == 'a') {
     previousMillis = millis();
     for (int i = NUM_LEDS - 1; i >= 0; i--) {
@@ -193,4 +200,3 @@ void juggle() {
     dothue += 32;
   }
 }
-
